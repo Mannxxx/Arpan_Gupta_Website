@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1d69a3e365.js" crossorigin="anonymous"></script>
+    <title>Professor Arpan Gupta - IIT Delhi</title>
+
+    <style>
+      /* Style for the dialog box */
+      .dialog-box {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      /* Style for the close button */
+      .close-btn {
+        float: right;
+        cursor: pointer;
+      }
+      /* Style for the content */
+      .dialog-content {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      /* Style for the buttons */
+      .btn {
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+    </head>
+    <body>
+    
+    <div id="dialog" class="dialog-box">
+      <span class="close-btn" onclick="closeDialog()">&times;</span>
+      <p class="dialog-content">This is the content of the dialog box. You can copy this text if needed.</p>
+      <button onclick="copyToClipboard()" class="btn">Copy Text</button>
+    </div>
+    
+    <script>
+      // Function to open the dialog box and copy its content
+      function openDialog() {
+        document.getElementById('dialog').style.display = 'block';
+        copyToClipboard();
+      }
+    
+      // Function to close the dialog box
+      function closeDialog() {
+        document.getElementById('dialog').style.display = 'none';
+      }
+    
+      // Function to copy text to clipboard
+      function copyToClipboard() {
+        const textToCopy = document.querySelector('.dialog-content').textContent;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          alert('Text copied to clipboard!');
+        }, (err) => {
+          console.error('Could not copy text: ', err);
+        });
+      }
+    </script>
+
+
+    <style>
+      /* Float four columns side by side */
+      .students-lists {
+        float: left;
+        width: 20%;
+        padding: 0 10px;
+      }
+
+      /* Remove extra left and right margins, due to padding */
+      .students-section {margin: 0 -5px;}
+
+      /* Clear floats after the columns */
+      .students-section:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive columns */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Style the counter cards */
+      .students-details {
+        padding: 16px;
+        text-align: center;
+        background-color: #ffffff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Float four columns side by side */
+      .research-column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+      }
+
+      /* Remove extra left and right margins, due to padding */
+      .research-row {margin: 0 -5px;}
+
+      /* Clear floats after the columns */
+      .research-row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive columns */
+      @media screen and (max-width: 600px) {
+        .research-column {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+
+      /* Style the counter cards */
+      .research-card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 50px;
+        /* text-align: center; */
+        background-color: #ffffff;
+        margin-bottom: 30px;
+        /* height:auto; */
+        /* position: relative; */
+      } 
+      
+      /* Style the citation and view button */
+        .citation {
+        font-style: italic;
+        color: #555;
+      }
+
+      .view-button {
+        display: inline-block;
+        bottom: 10px;
+        margin-left: 130px;
+        margin-top: 10px;
+        /* transform: translateX(-50%); */
+        padding: 8px 16px;
+        background-color: #020594;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        cursor:pointer;
+      }
+      
+      .view-button:hover {
+        background-color: #020594;
+      }
+
+      .read-more {
+        display: none;
+        margin-top: 10px;
+      }
+
+      .show-content .read-more {
+        display: block;
+      }
+          
+    </style>
+  </head>
+  <body>
+    <nav class="quick-links">
+        <ul>
+            <li><a href="#home-section">Home</a></li>
+            <li><a href="#research-section">Research Work</a></li>
+            <li><a href="#courses-section">Courses Taught</a></li>
+            <li><a href="#students-section">Research Students</a></li>
+            <li><a href="#alumni-section">Alumni</a></li>
+            <li><a href="#talks-section">Talks</a></li>
+            <!-- <li><a href="#seminars-section">Seminars</a></li> -->
+            <li><a href="#awards-section">Awards</a></li>
+            <li><a href="#contact-section">Contact Me</a></li>
+        </ul>
+    </nav>
+
+  <header style="position: relative;">
+    <div class="header-content">
+        <img src="pics/logo2.png" width="600" alt="IIT Delhi Logo" style="margin: 0;">
+        <h2 style="color: rgb(232, 56, 56); margin-left: 120px; font-weight: 500;">Department of Mechanical Engineering</h2>
+    </div>
+
+    <div class="header-content" style="position: absolute; top: 0; right: 0; display: flex; align-items: center;">
+        <img src="pics/ag_desk.jpg" alt="Professor's Photo" width="450" style="margin-top: 50px; margin-right: 50px;" />
+        <div>
+            <h2 style="color: rgb(224, 16, 16); margin-top: 10px;">Professor Arpan Gupta</h2>
+            <p><strong>Email:</strong> arpan.gupta@mech.iitd.ac.in</p>
+            <p><strong>Office:</strong> III - 343A, Dept. of Mechanical Engineering, IIT Delhi</p>
+            <br>
+            <a href="mailto:arpan.gupta@gmail.com" style="color: rgb(104, 21, 104); text-decoration: none;"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a>
+            <a href="https://www.linkedin.com/in/YourLinkedInProfile" target="_blank" style="color: rgb(104, 21, 104); text-decoration: none; margin-left: 10px;"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=You
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            rGoogleScholarProfile" target="_blank" style="color: rgb(104, 21, 104) ; text-decoration: none; margin-left: 10px;"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a>
+            <a href="https://www.researchgate.net/profile/YourResearchGateProfile" target="_blank" style="color: rgb(104, 21, 104); text-decoration: none; margin-left: 10px;"><i class="fab fa-fw fa-researchgate" aria-hidden="true"></i> ResearchGate</a>
+        </div>
+    </div>
+      </div>
+</header>
+
+  
+
+    <section id="home-section" class="professor-info">
+        <!-- Content for Home section -->
+        <p>Hi! I am working as an <strong>Associate Professor</strong> in the Mechanical Engineering department at IIT Delhi.</p>
+        <p>I did my Ph.D. in xyz from National University of Singapore.</p>
+
+        <h3 style="color: rgb(232, 56, 56);">Research Interests:</h3>
+        <ul>
+            <li>Acoustics - sonic crystal, metamaterials</li>
+            <li>Vibrations</li>
+            <li>Bio-mechanics</li>
+            <li>computational methods</li>
+            <li>Robotics</li>
+        </ul> 
+
+        <h3 style="color: rgb(232, 56, 56);">Teaching Interests:</h3>
+        <ul>
+            <li>Engineering visualization</li>
+            <li>Vibrations</li>
+            <li>FEM</li>
+            <li>Numerical Methods</li>
+        </ul>
+
+        <h3 style="color: rgb(232, 56, 56);">Education:</h3>
+        <ul>
+            <li>Ph.D from <a href="https://www.researchgate.net/institution/National-University-of-Singapore?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InByb2ZpbGUiLCJwYWdlIjoicHJvZmlsZSJ9fQ"  style="color:rgb(117, 16, 126); text-decoration:none">National University of Singapore</a></li>
+            <li>B.Tech. from IIT Delhi, Mechanical Engineering</li>
+        </ul>
+
+        <h3 style="color: rgb(232, 56, 56);">Academic Research Experience</h3>
+        <ul>
+          <li>Scientist - Institute of High-Performance Computing, A*STAR, Singapore</li>
+        </ul>
+
+        <h3 style="color: rgb(232, 56, 56);">Teaching Experience</h3>
+        <ul>
+          <li>Associate Professor, <a href="https://www.researchgate.net/institution/Graphic-Era-University?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InByb2ZpbGUiLCJwYWdlIjoicHJvZmlsZSJ9fQ"  style="color:rgb(117, 16, 126) ; text-decoration:none">Graphic Era University<a></li>
+    </section>
+    
+    <section id="courses-section" class="professor-info">
+      <!-- Content for Courses Taught section -->
+      <h3 style="color: rgb(232, 56, 56); margin-top: -9px;">Currently Teaching, Aug 2023</h3>
+      <ul>
+        <li>Engineering Visualization and communication <a href="https://moodle.iitd.ac.in/course/view.php?id=16823">(MCP100)</a></li>
+      </ul>
+
+      <h3 style="color: rgb(232, 56, 56);">Courses Taught</h3>
+      <ul>
+        <li>Mechanical Vibrations</li>
+        <li>Finite Element method</li>
+        <li>Computational Method/Numerical Method</li>
+        <li>Theory of Machines</li>
+        <li>Mechanics of Solids</li>
+        <li>Engineering Mechanics</li>
+        <li>Acoustics</li>
+        <li>Vehicle Design and Dynamics</li>
+      </ul>
+
+      <h3 style="color: rgb(232, 56, 56);">Short Term Courses</h3>
+      <p>Courses related to Vibrations, Noise, FEM, numerical methods, etc</p>
+  </section>
+
+  <section id="calendar" class="professor-info">
+    <div class="container">  
+    <div class="row">
+      <div class="col-12 col-lg-4 section-heading">
+        <h2 style="color: rgb(232, 56, 56);">Calendar</h2>
+      </div>
+      <div class="col-12 col-lg-8">
+        <p>Please make an appointment based on my availability below</p>     
+    <p><strong>Working Hours</strong>: 9:30AM - 12:30PM; 2:00PM - 5:30PM</p>      
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23616161&ctz=Asia%2FKolkata&src=bWFuc2kyMTAyMUBnbWFpbC5jb20&src=MTU3MzkwOTczZWNiNDNkZDVhMDRiMWI1MDcxOGQxZTU4NTRiY2U5MjBkMjVlOGU5NzY0Y2JiNTMzNTczZDdhN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%23E4C441&color=%2333B679" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>     
+      </div>
+    </div>
+    </div>
+  </section>
+  
+    <section id="research-section" class="professor-info">
+        <!-- Content for Research Work section -->
+        <h2 style="color: rgb(232, 56, 56);">Some of my Research work ...</h2>
+        <div class="research-row">
+          <div class="research-column">
+            <div class="research-card">
+              <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0016236121018020-gr1.jpg" alt="Research Photo" width=280" height="210">
+              <h4 style="color: rgb(0, 0, 0);">Hydrogen-diesel co-combustion characteristics, vibro-acoustics and unregulated emissions in EGR assisted dual fuel engine</h4>
+              <p class="citation">Citation: Author et al., Journal Name, Year</p>
+              <!-- <p>This work investigates the co-combustion characteristics of the hydrogen-diesel dual fuel with exhaust gas recirculation (EGR). The experiments were performed on a retrofitted duel fuel compression ignition engine for the entire engine load spectra, while the maximum hydrogen energy share in the study was 30%. </p> -->
+              <div class="read-more">Read more...</div>
+              <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=fAtc4OIAAAAJ&citation_for_view=fAtc4OIAAAAJ:x-IcQEm-ju4C" class="view-button">View</a>
+              <!-- <button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal" data-filename="C:/Users/Mansi/Desktop/arpan gupta/publications/S0016236118321185.bib">
+                Cite
+              </button> -->
+              <button onclick="copyToClipboard()" class="btn">Cite</button>
+            </div>
+          </div>
+        
+          <div class="research-column">
+            <div class="research-card">
+             <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0360319919311280-fx1.jpg" alt="Research Photo" width=270" height="150">
+             <br>
+             <br>
+             <br>
+             <br>
+              <h4 style="color: rgb(0, 0, 0);">Experimental study of engine performance and emissions for hydrogen diesel dual fuel engine with exhaust gas recirculation</h4>
+              <p class="citation">Citation: Author et al., Journal Name, Year</p>
+              <!-- <p>With an alarming enlargement in vehicular density, there is a threat to the environment due to toxic emissions and depleting fossil fuel reserves across the globe. This has led to the perpetual exploration of clean energy resources to establish sustainable transportation. Researchers are continuously looking for the fuels with clean emission without compromising much on vehicular performance characteristics which has already been set by efficient diesel engines.</p> -->
+              <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=fAtc4OIAAAAJ&citation_for_view=fAtc4OIAAAAJ:x-IcQEm-ju4C" class="view-button">View</a>
+            </div>
+          </div>
+
+          <div class="research-column">
+            <div class="research-card">
+              <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0016236118321185-gr1.jpg" alt="Research Photo" width=270" height="210">
+              <br>
+              <h4 style="color: rgb(0, 0, 0);">Combustion, vibration and noise analysis of hydrogen-diesel dual fuelled engine</h4>
+              <p class="citation">Citation: Author et al., Journal Name, Year</p>
+              <!-- <p>The transportation sector of the present-day world is facing severe problems like increasing global pollution and continuous depletion of conventional energy resources; both at alarming rates; which has motivated the researchers to look for alternative fuels and study various aspects of clean burning and sustainable fuels.</p> -->
+              <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=fAtc4OIAAAAJ&citation_for_view=fAtc4OIAAAAJ:x-IcQEm-ju4C" class="view-button">View</a>
+            </div>
+          </div>
+
+          <div class="research-column">
+            <div class="research-card">
+              <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0016236121018020-gr1.jpg" alt="Research Photo" width=270" height="200">
+              <h4 style="color: rgb(0, 0, 0);">Hydrogen-diesel co-combustion characteristics, vibro-acoustics and unregulated emissions in EGR assisted dual fuel engine</h4>
+              <p class="citation">Citation: Author et al., Journal Name, Year</p>
+              <!-- <p>This work investigates the co-combustion characteristics of the hydrogen-diesel dual fuel with exhaust gas recirculation (EGR). The experiments were performed on a retrofitted duel fuel compression ignition engine for the entire engine load spectra, while the maximum hydrogen energy share in the study was 30%. </p> -->
+              <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=fAtc4OIAAAAJ&citation_for_view=fAtc4OIAAAAJ:x-IcQEm-ju4C" class="view-button">View</a>
+            </div>
+          </div>
+    </section>
+
+    <!-- Dialog box for citation -->
+    <div id="cite-dialog" class="cite-dialog">
+      <div class="cite-dialog-content">
+          <span class="close">&times;</span>
+          <p id="citation-content"></p>
+      </div>
+    </div>
+
+    <section id="students-section" class="professor-info">
+        <!-- Content for Research Students section -->
+        <h2 style="color: rgb(232, 56, 56);">Research Students</h2>
+
+      <h3>P.H.D Researchers</h3>
+
+      <div class="students-section">
+        <div class="students-lists">
+          <div class="students-details">
+            <img src="https://media.licdn.com/dms/image/C5103AQEI5Mgs9LcOSg/profile-displayphoto-shrink_400_400/0/1583085159814?e=1710979200&v=beta&t=PxMncVopSBRqRosiFIh_CEV3TZnQrZCpGocZLs9h3q4" alt="LinkedIn Photo" width="120" height="120">
+            <h3>Lokendra Singh</h3>
+             <p style="font-size: 15px; color: #484747;">PhD Scholar in School of Mechanical and Materials Engineering, IIT Mandi</p>
+              <p><a href="https://www.linkedin.com/in/lokendra-singh-15417492/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+              <p><a href="https://scholar.google.com/citations?user=_f_VaWoAAAAJ&hl=en" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+          </div>
+        </div>
+
+        <div class="students-lists">
+          <div class="students-details">
+            <img src="https://media.licdn.com/dms/image/D5603AQHy3JebDsi9yA/profile-displayphoto-shrink_400_400/0/1703614201724?e=1710979200&v=beta&t=uFIU1sMSdG9MO4fkgnI7A_WlN08LcU3GmmQHI4qKP0k" alt="LinkedIn Photo" width="120" height="120">
+            <h3>Debarshi Biswas</h3>
+             <p style="font-size: 15px; color: #484747;">Doctor of Philosophy - PhD, Mechanical engineering design </p>
+             <p><a href="https://www.linkedin.com/in/debarshi-biswas-debgyan1729/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+             <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+          </div>
+        </div>
+
+        <div class="students-lists">
+          <div class="students-details">
+            <img src="https://rggec.ac.in/wp-content/uploads/2023/09/image_2023_09_29T09_48_34_004Z.png" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+            <h3>Anil Pundir</h3>
+             <p>Assistant Professor</p>
+              <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+              <p><a href="https://www.linkedin.com/in/Anil Pundir-15417492/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+              <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+          </div>
+        </div>
+      </div>
+
+      <h3>M.S.(R)</h3>
+
+      <div class="students-section">
+        <div class="students-lists">
+          <div class="students-details">
+            <img src="https://media.licdn.com/dms/image/D5603AQGqNakRHxzlVg/profile-displayphoto-shrink_400_400/0/1691162472724?e=1710979200&v=beta&t=k28wRoNTyaXO1SKFr5ZPW4VMXItixX_OO7ihaKZPGs4" alt="LinkedIn Photo" width="120" height="120">
+            <h3>Ritam Paul</h3>
+             <p>Actively working on the development of a multi-component CAD model of the human elbow structure.</p>
+              <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+              <p><a href="https://www.linkedin.com/in/ritam-paul-715867186/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+              <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+         </div>
+        </div>
+
+      </div>
+
+      <h3>Undergraduate Students</h3>
+
+      <div class="students-section">
+        <div class="students-lists">
+          <div class="students-details">
+            <img src="https://media.licdn.com/dms/image/D4D35AQFKEwgMVGvNJg/profile-framedphoto-shrink_400_400/0/1703483578097?e=1706011200&v=beta&t=aL8mXV5RvFKJI8fskzTUY9ud8oRMjWovyqVqhFVJVL4" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+            <h3>Rahul Saini</h3>
+             <!-- <p>Actively working on B.Tech project on "Track Check on Helicopter Main Rotor Blade.</p> -->
+              <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+              <p><a href="https://www.linkedin.com/in/rahul-saini-iitd/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+          </div>
+        </div>
+
+        <div class="students-lists">
+          <div class="students-details">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Eo_circle_red_white_letter-m.svg/1024px-Eo_circle_red_white_letter-m.svg.png" alt="LinkedIn Photo" width="120" height="120">
+            <h3>Mansi</h3>
+             <!-- <p>Actively working on B.Tech project on "Track Check on Helicopter Main Rotor Blade.</p> -->
+              <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+              <p><a href="https://www.linkedin.com/in/mansi-sharma-383036209/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+          </div>
+        </div>
+
+        <div class="students-lists">
+          <div class="students-details">
+            <img src="https://media.licdn.com/dms/image/D4D03AQHaig3DBqPVxw/profile-displayphoto-shrink_400_400/0/1670443690714?e=1710979200&v=beta&t=ZRuayp016Bp8QYS25XISoPyHaw4a_7FxoDhJ10xkAZA" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+            <h3>Shuchi Jain</h3>
+             <!-- <p>Actively working on B.Tech project on .</p> -->
+              <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+              <p><a href="https://www.linkedin.com/in/shuchi-jain-94855a230/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+          </div>
+        </div>
+
+        <div class="students-lists">
+          <div class="students-details">
+            <img src="data:image/png;base64,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" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+            <h3>Gaurav Luniya</h3>
+             <!-- <p>Actively working on the B.Tech project on .</p> -->
+              <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+              <p><a href="https://www.linkedin.com/in/gaurav-luniya-524b15232/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+          </div>
+        </div>
+
+        <div class="students-lists">
+          <div class="students-details">
+            <img src="https://media.licdn.com/dms/image/D4D03AQGKA0r6ntg3Dw/profile-displayphoto-shrink_400_400/0/1688298245647?e=1710979200&v=beta&t=MTyVhVYa0slxNg2qAyq06nTHpkF70WCSzDLxxgvlp8M" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+            <h3>Hardik Agarwal</h3>
+             <!-- <p>Actively working on the B.Tech project on .</p> -->
+              <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+              <p><a href="https://www.linkedin.com/in/hardik-agrawal-iitd/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+          </div>
+        </div>
+
+        <div class="students-lists">
+          <div class="students-details">
+            <img src="https://media.licdn.com/dms/image/C5603AQG0uGyrCfZWFg/profile-displayphoto-shrink_800_800/0/1652988813428?e=1710979200&v=beta&t=w5RoGuPfgB5gx2SUxUoFlUWE9Vaz3buPZpGqp2aw8g4" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+            <h3>Bheem Achra</h3>
+             <!-- <p>Actively working on the B.Tech project on .</p> -->
+              <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+              <p><a href="https://www.linkedin.com/in/bheem-achra-46536723b/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+          </div>
+        </div>
+
+        <div class="students-lists">
+          <div class="students-details">
+            <img src="data:image/png;base64,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" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+            <h3>Ashish Jangde</h3>
+             <!-- <p>Actively working on the B.Tech project on .</p> -->
+              <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+              <p><a href="https://www.linkedin.com/in/bheem-achra-46536723b/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="alumni-section" class="professor-info">
+        <!-- Content for Talks section -->
+        
+        <h2 style ="color: rgb(232, 56, 56);">Alumni</h2>
+
+        <div class="students-section">
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="https://i1.rgstatic.net/ii/profile.image/11431281151235743-1681970183426_Q128/Preeti-Gulia.jpg" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Preeti Gulia</h3>
+               <p>Assistant Professor, NIT Agartala</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="https://www.linkedin.com/in/preeti-gulia-dhaka-58427616b/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="https://scholar.google.co.in/citations?user=PSDWNPQAAAAJ&hl=en" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="https://media.licdn.com/dms/image/C5603AQEPddqgdxeshg/profile-displayphoto-shrink_400_400/0/1616062650972?e=1710979200&v=beta&t=g7cXEwjyOZdbZnB5795ld0xzU_Cbup65JjTs4kCTzUo" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Sarthak Nag</h3>
+               <p> Assistant Professor, IIT Mandi</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="https://www.linkedin.com/in/sarthaknag/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="https://scholar.google.co.in/citations?user=2ltSnQ8AAAAJ&hl=en" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="data:image/jpeg;base64,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" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Dikshita Joshi </h3>
+               <p>IAS</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="https://media.licdn.com/dms/image/C4E03AQETJ49FlQX8Jg/profile-displayphoto-shrink_400_400/0/1593170788663?e=1710979200&v=beta&t=P2ZIoec2hU-RsL8WgZgiDAC9YWTopWWUISrexojRCuI" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Sourabh Dogra</h3>
+               <p>PhD UK</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="https://www.linkedin.com/in/sourabh-d/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="https://media.licdn.com/dms/image/C4D03AQELnLXM57EC-A/profile-displayphoto-shrink_400_400/0/1642233991638?e=1710979200&v=beta&t=FW9uXICRodxY11IBLYrqx1QAcAgGymssYgvS4Xs5PcY" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Saurabh Yadav</h3>
+               <p>Chandigarh University Faculty</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="https://www.linkedin.com/in/saurabh16yadav/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="https://scholar.google.com/citations?user=Ej33iPcAAAAJ&hl=en" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="https://media.licdn.com/dms/image/D5635AQH5STIjJoS1Jg/profile-framedphoto-shrink_400_400/0/1701686629954?e=1706112000&v=beta&t=eGwF0-rn8HSmHSWkUVisJKe0sfjThDxm8dOu18hTSYc" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Gaurav Sharma</h3>
+               <p>PMRF IITB</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="https://www.linkedin.com/in/gaurav-sharma-4543b655/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="https://scholar.google.com/citations?user=s9qV8mAAAAAJ&hl=en" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+
+
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="https://media.licdn.com/dms/image/D4D03AQFArgm13Y5c7w/profile-displayphoto-shrink_400_400/0/1694520367200?e=1710979200&v=beta&t=5oJj-F1Hj70cotKRW6U9hbti7ihFmlAV0YTnTzgaOE4" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Ankit Joshi</h3>
+               <p>Startup on EV</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="https://www.linkedin.com/in/joshigankit/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+
+
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="https://media.licdn.com/dms/image/C5603AQFrlgbL2feKWw/profile-displayphoto-shrink_400_400/0/1631261520354?e=1710979200&v=beta&t=jsi1clGcwfIa931rAeQ8RXohzg_ZAT1MwyzKKx1ynqQ" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Aman Thakur</h3>
+               <p>Structural Engg at Miyamoto Inc</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="https://www.linkedin.com/in/aman-thakur-328108156/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+
+
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="https://media.licdn.com/dms/image/D4D03AQH_aYpngPtgZQ/profile-displayphoto-shrink_400_400/0/1682345172276?e=1710979200&v=beta&t=UUfOqBen8RR20AqTNOQIFsJ-C4pBK6osxQs6VLmMirk" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Rishabh Sharma</h3>
+               <p>Structure Engineer at L&T Limited</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="https://www.linkedin.com/in/rishabh-sharma-184aa8159/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="https://scholar.googleusercontent.com/citations?view_op=view_photo&user=SdgAsasAAAAJ&citpid=2" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Abhishek Singh</h3>
+               <p> Direct PhD, Purdue UniversityK</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="https://www.linkedin.com/in/abhishek-singh-90842b238/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="https://scholar.google.com/citations?user=SdgAsasAAAAJ&hl=en" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="https://media.licdn.com/dms/image/D5603AQEJU5D1cXLg_Q/profile-displayphoto-shrink_400_400/0/1670304833720?e=1710979200&v=beta&t=9rIWLHkodHedBQQ2IbgDdnHz8j0SrENUy02yWlp6Bko" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Mohit Dhanda</h3>
+               <p>Research Assistant - University of Waterloo</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="https://www.linkedin.com/in/mohit-dhanda-41b1151a0/" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+
+          <div class="students-lists">
+            <div class="students-details">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEVDoEf///84nDxAn0Soz6owmjWy1LQzmzg9nkEumTNLpE86nT4qmDD6/fr0+fREoUjW6NfG38dOpVK72bzP5NCCvITB3cLe7d6lzaZfrGKSxJSJv4uv07BSp1aayJxqsW3p8+p1tneeyZ98uX5jrmaVxZcelSXT5tTu9u5wtHJaq12fjMrHAAAMGklEQVR4nO2de3uyPBLGhTQCgmdbW621avvW+v0/4GL7cJ6BHG4U9ur8tdfus5YfSWbmnkzCwPl/t8G9H6B1+yPsv/0R9t/+CAE2Ps/mr2/bw8dlGnquF/rT0WV/2L4N5+vJuP0/3yrhZDbc7HduID039H0hxODH4v8gfD90PRmIy+G4XLfK2RrhevgoIhmT/cNiTPiuK6PFdrhu60FaIXx//RbSbWArccrp4/LcxsPACcfzzTRwfWW4PGW0e1vBZyyYcH6KXYn62FUoQ+k/rrCPhCT82rqeweCVzJf+ZgZ8Khjh5GEk7fF+LZSjZ9iaBBGut4FrPjmrJtzg9IV5NAjhah+EQLxf8+XlCfFwAMKnHWx6Fk3IxbIDhMuph5yeJUZPWDNaEs4XLfL9Mo7mdyScvch2+X4Y5cUqeFgQTh6D9vl+GIPT5B6Erx7ef3Lmy4ebE64v3s34rubtTMWHIeHnjSZoZiL4vCHheuHemO9q7sJoGE0In28+gL8mApPVqE842d92BebN2+s7VW3CmWgnRVMzP9RWj7qEz9F9ZmhiIjq2S3iSd+W7mjy1SHje3S7I8xbutNSxDuEsvOcSzMwPdRJVDcKnOy/BzESg4W/UCR+ie4PlLFKXjcqEb/f3MXkLXtGEm24BxqOoGjUUCTf3y2M4k4qZuBph50bwanKDI+zgCF5NbRRVCI9dHMGrBc8Ywtfg3iSsBQpBo5lw3qU4WLaoOfQ3En51GTBWjI26v4nwDN1wwZsQTZq4gXA86jZgnIZf7Ai/uyCX6s19tCH87GYgLFpDtbiWsNNuNLOoVi7WEb73YQQH1y6OOm9TR3jphqRvNn9vRvh2j8K2mckatcgTzvqxCH9NvhsQTrseCfMm+KjIEm67Hwnz5rEygyOcdVdQ0MbOU46w89la2fwPPcJjf/xoYpLRijThe9/m6NVCunGTJjz0JdbnLdyqE67AhRnfpQ3srgPS2ZCEO6yb8Q8PtL1hEenkjSJcgjPugK00gD12RDVsUoTgbEbsOEAHPIhkZkMQDsFDGPJVzTXYZ0uiy48gRIfCqGbLdgGeLgsVwlcwoXjhAZ0H8B8jBrFKiNYU7rCG8B0cl4jXWSFEO9KBV1vQ/AC/T1kpglcI0Sm3f6gDdIbgaVqNiWVCdDoz8OqbmCfoSkIl+JYJH9EZqawFxKfAfrlAXCKcoIfQp9PhzObodS9L675EiPbeA9l08mWMrpa4pbpbiRDtZ8S0ARC/LspRv0g4Q0/SsHmrHe7bZLHIXyTcov0MLysyE+B5ExZ7NIqE6FVYIysy+0SvRJ8nhPs1V6VZAr40islpgRAfDPlie87gaVQhJOYJx2jAWlmR2RE9TQVHCPdqtbIiM3jtshCE84Qb9LsspxecvaC9aT5G5QnRbrtBVmQGF90jmhBdNBl4qud4z+i/HOU8XI4Q/SYHHlVmJxsn0Do47wByhK3rmJ/hiihCdGHBz53JyAjH6P20akEhtuF/lNiYgAnzCX9GuEYXhUhZsXfJzt4TeP7k8uGMEF0xIWXFxCv4udTQ+aKbbSZmhGhdQcqKpTuQpNxA73ZlpYWMEJwd0mP17Q/CN+p/AL/fnAxOCcfgohcpK66VNRr9CzyImctOCdEahpQVy+tap1UxuNSerYWUEOxoBNka8X2di/ReFFgHZ64mJQSn3aSs+A17dP8SOGcM00NDKeEeu9QjSlb8S11oXYzdaMuy/kHbfyBv379v0SVz02foMskmSkI4xoZcUlYk7pqW/uCNtrS7JiEE62yye+cpeYv0rjBWBwfJ30gIV9AxJGVFJl7o6gZWvaV14YTwCUpIyopMQAiy8QW70Zbu6iWE0C0ZISiC3Euk94W/ke48nScJITTg0rsVOYXtkn2EUB2cBsSEEJr5kvJhnPOVdDCB+vN09yIhRJYwqK6WkgSUZKckUgenhYyEEOmq6cSz8Ph0GQ6pg/3vEiEypYmorGxccGU+fX0HciIlaUVCCBQvtKwojY9LTlPgAYF0qSSEwGBBx/PSGqObUIA6OC2EtUAYUMFuXPoDdNbjDIBTqTXCdIkXrOJEfOpfIRtOw9YIaTdZ2XwlEzukDnZLhMB3R/qQyhsM6TsfLrBpWh5D2A/TC6wa6ejc1XmGvepkGcCjBT37iA4BSZ5tfUcJjIovhdWDPXJoiFDONBOhpmlalh2Af5h+bqpDgK4Mw6qaaaEmIdyDCOldCVK50P/0DMpNU5WdEILSeqYJinzqkL4HCaSDK9oCpA9pWUEXgWiRhaqnVPQhKJkgZQX3+uh/PMYE/YrGxxS6mCYoZo0zh2kwvWdpI21CiBGftKxYBYI05loSTGtWpdb2BSH0yFLvZjqiLaQb+yBuvVIvhTTt0LJC2yA6uFLzhjSUKzdB1Rtks7aybwE5N0o2QRkYIIWs7j0hAi2j2/UNELqI/UPAr9KywsAAzUtudQ94aR8QacVnYvZLhtjHt39vjGo3Mft9IqIXw76fRuVshaLZxy6in8a66q10tkLVbMVc7mFwfW2MGDIzWx0cUn1ttj9K39lgaLanBMneRMtSZc09RiZmuduXe925Lmi7cpvi2QpVs9PBdI+w5WuT2I8X2uXJdJ+3nQgGyYrMrHQw06tv1TQEkhWZWelg5ryF1UKM4N+etJhR3JkZmwZMRlashgrG3Aho8TSF/BF0do2RFVOPuT8pb//Rl3Na3BhXeJrCCUvjxc0c2VYLsdxpaPM0srD7ijlDysgKtaOTTGXY/OAlf4bUvKTIyArFagTz/zbeaPP4c8Cm/osZBdU8kMvZTffDwsKvlM7jm00M5si26jTjdJdhClK6mQ5ypwJzZFu5FkFvYJhutNXeqWBWx2N2K9TrInRru+H5gfp7McwKJIysUPeFnPIyajhtuNvESHmSTVBa84GZ5kYbbQ3305iERObIto6iLr/3xAx2pis3YJYJDXwNIyt0OmPodkajAN14T5RBKy3dSKkXzchDRI5Bq1b1XVUI57qDyMgKPbXJ1UC0C4DVS/eqd+7pJryMrNBr3+JKBLoNp0TyUCXUdNHcTVCaL4q7mU9TlXvVYw7E3Ze+1o8y2kf3nBZXBdE7B0K9buv7SxlhoHvWjrslRK+KK4n3RN1Bq5O6Md1p+rqAPoGh+TBUCk8RPmnMMCZW62s77n5FHYFBfviRvAtaYwD8DXnLs34yIvav5C99qv8SrQBIQp0iEH1Xt4EoEHSdSuOXaJdA38mOvojjJhYyBxzI/xZ+6c8tjAmpzLcRnnvymaCceYw+4b5vAb54vn1j9y85wt59o4Ttk+AInU2/vuHhknfC1BL26zssNY0gPCH8+rY2raaXhyfskz/1aj6fV0PovPQl7rPfCWoinIT9WIrm385zVv349Jr59w8d560PS9HmG5aOs+/+19dC+uC7KmEPviXb1BLZQNj97wHXehkVwq4nqM1tu42EzlOXHWpU//UMNULnoasfj49HUKEhUoHQ+ewqYqBy5bsKobPtZliUzR9eUCV0HruIKNVOP6gRdnEUFQFVCZ1N19ZioDRFNQidY7fiYqB89kGZ0HntUlyM1Pvm1Qnj0N+VBE4EzYHehNCZdSRH9YXOCSsdQuc86oKYci+KH5UwIHTGh/tHDal5UlWPMFb9d/Y3IqpX9PaEzty7ZwXOF7U1GQih8365X71f7rWWoCHhdabex6eKQHeGmhI6s9E9htHdGR3DNSKM09Tg1sMopOEZVUPCmw+j92J6RNWU0HGe5e2cashtYbdK6JxPN5qqInjUd6EIwniq7mT7jCJ4sTrob0UY642p1y6jkDvL2zYsCWPZ6LfIKOTC+myqNaHjDBctMQr5oqEDWySM5+quBb8aBh+Q22AghLHPeZRQeSxcbwu6SARE6DiT15FE6eNQ7oYW8aFoMMLYvrYhYLb6nr/B3QODJYxt9SikRX+DiF/RCeBd8gYmjG21EYGr1+//S+e70e4NddVUZnjC2N6Hp2ngaoylCN1gelpir9b4Z60QXm293Fwi6YUNoxmPnCejy2aJXHoFa43wx9ZPx8POC6TnhjGq+Pcp159bIcMwRgu83eH41Brcj7VL+GPj82w+PG4PH5fRNJ6OoZguLh+H7XE4n53ht2lU7QaEd7Y/wv7bH2H/7Y+w//Y/LJ+5T20eA/UAAAAASUVORK5CYII=" alt="Akshay Mehta's LinkedIn Photo" width="120" height="120">
+              <h3>Akshit</h3>
+               <p>xyz</p>
+                <!-- <p><a href="https://www.researchgate.net/profile/Akshay_Mehta2" style="color: rgb(117, 16, 126); text-decoration: none;">ResearchGate Profile</a></p> -->
+                <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn</a></p>
+                <p><a href="#" style="color: rgb(117, 16, 126); text-decoration: none;" target="_blank"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i>Google Scholar</a></p>
+            </div>
+          </div>
+        </div>
+
+
+
+    </section>
+
+
+    <section id="talks-section" class="professor-info">
+        <!-- Content for Talks section -->
+
+        <h2 style ="color: rgb(232, 56, 56);">Conferences and Symposia</h2>
+        <ul>
+          <li style="margin-bottom: 10px;">Mehta, Sharad, Akshay Vishnoi, and Arpan Gupta. "Development of a multi-component CAD model of human elbow structure." Medical Imaging, m-Health and Emerging Communication Systems (MedCom), 2014 International Conference on. IEEE, 2014.</li>
+          <li style="margin-bottom: 10px;">Bhardwaj, Akshay, Arpan Gupta, and Kwong Ming Tse. "Mechanical response of femur bone to bending load using finite element method." Engineering and Computational Sciences (RAECS), 2014 Recent Advances in. IEEE, 2014.</li>
+          <li style="margin-bottom: 10px;">Pandey, Harsh, Ishan Khan, and Arpan Gupta. "Walking based wearable mobile phone charger and lightening system." Medical Imaging, m-Health and Emerging Communication Systems (MedCom), 2014 International Conference on. IEEE, 2014.</li>
+          <li style="margin-bottom: 10px;">Gupta, Arpan, and Kwong Ming Tse. "Finite Element Analysis on Vibration Modes of Femur Bone."</li>
+          <li style="margin-bottom: 10px;">Vishnoi, Akshay, Sharad Mehta, and Arpan Gupta. "Biomedical Image Processing for Human Elbow." Devices, Circuits and Communications (ICDCCom), 2014 International Conference on. IEEE, 2014.</li>
+        </ul>
+    </section>
+
+    <section id="awards-section" class="professor-info">
+        <!-- Content for Awards section -->
+        <h2 style ="color: rgb(232, 56, 56);">Awards, Honors, and Invited Talks</h2>
+        <ul>
+          <li style="margin-bottom: 10px;">Young Scientist award - DST "Design of quieter hard disk and optical drive using sonic crystal"</li>
+          <li style="margin-bottom: 10px;"><a href="https://saeindia.glueup.com/event/finite-element-methods-for-automotive-applications-33722/speakers.html" style="text-decoration:none; color: black; ">Best software project award for B.Tech final year project at IIT Delhi</a></li>
+          <li style="margin-bottom: 10px;">Invited speaker - International Conference on Mathematical Techniques in Engineering Applications - Dehradun</li>
+        </ul>
+    </section>
+
+    <section id="contact-section" class="professor-info">
+        <!-- Content for Contact Me section -->
+        <h2 style ="color: rgb(232, 56, 56);">Contact Me</h2>
+        <p><strong>Email:</strong> arpan.gupta@mech.iitd.ac.in</p>
+        <p><strong>Office:</strong> III - 343A, Dept. of Mechanical Engineering, IIT Delhi, Hauz Khas, New Delhi, 110016 </p>
+
+        <h4 style ="color: rgb(192, 30, 30);">My research profiles</h4>
+        <a href="mailto:arpan.gupta@gmail.com" style="color: rgb(104, 21, 104); text-decoration: none;"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a>
+        <a href="https://www.linkedin.com/in/YourLinkedInProfile" target="_blank" style="color: rgb(104, 21, 104); text-decoration: none; margin-left: 10px;"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=YourGoogleScholarProfile" target="_blank" style="color: rgb(104, 21, 104) ; text-decoration: none; margin-left: 10px;"><i class="fas fa-fw fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/YourResearchGateProfile" target="_blank" style="color: rgb(104, 21, 104); text-decoration: none; margin-left: 10px;"><i class="fab fa-fw fa-researchgate" aria-hidden="true"></i> ResearchGate</a>
+        <p>Thank you for visiting!</p>
+    </section>
+
+    <footer>
+      <div class="container" style="margin-left: 40%;">
+          <p style="font-size: medium;">&copy; Arpan Gupta <span id="currentYear"></span> | Last Updated: <span id="lastUpdated"></span></p>
+      </div>
+    </footer>
+
+    <!-- Add more sections and content as needed -->
+
+    <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Update the current year in the footer
+            document.getElementById("currentYear").innerText = new Date().getFullYear();
+          
+            // Update the last updated date (you can customize this part based on your needs)
+            document.getElementById("lastUpdated").innerText = "January 18, 2023"; // Update with your actual last updated date
+
+            // Add back to top functionality
+            window.onscroll = function () {
+            scrollFunction();
+        };
+        });
+
+        function scrollFunction() {
+            var backToTopBtn = document.getElementById("backToTopBtn");
+
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
